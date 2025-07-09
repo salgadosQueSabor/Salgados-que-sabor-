@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Salgados Que Sabor</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 0; background: #fff8e7; color: #333; }
@@ -24,6 +24,7 @@
     }
     .order-button:hover, .checkout-button:hover { background: #e03e00; }
     #cart { background: #fff0d9; padding: 20px; margin: 30px; border: 2px dashed #ff4d00; }
+    input, select { font-size: 1em; padding: 8px; width: 100%; margin-top: 5px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc; }
     footer { background: #ff4d00; color: white; text-align: center; padding: 20px; font-size: 0.9em; }
   </style>
 </head>
@@ -65,6 +66,17 @@
     <h2>🛒 Seu Pedido</h2>
     <ul id="cart-items"></ul>
     <p>Total: R$ <span id="total">0.00</span></p>
+    <div>
+      <label>Nome:<input type="text" id="nomeCliente" /></label>
+      <label>Endereço:<input type="text" id="enderecoCliente" /></label>
+      <label>Forma de pagamento:
+        <select id="pagamentoCliente">
+          <option value="Pix">Pix</option>
+          <option value="Dinheiro">Dinheiro</option>
+          <option value="Cartão">Cartão</option>
+        </select>
+      </label>
+    </div>
     <a class="checkout-button" id="checkout-link" href="#" target="_blank">Finalizar pedido via WhatsApp</a>
   </section>
 
@@ -91,7 +103,19 @@
         total += price;
       });
       totalSpan.textContent = total.toFixed(2);
-      const message = encodeURIComponent("Olá! Gostaria de fazer um pedido:\n" + cart.map(c => `- ${c.item} (R$${c.price.toFixed(2)})`).join("\n") + `\nTotal: R$${total.toFixed(2)}`);
+
+      const nome = document.getElementById('nomeCliente').value || "Não informado";
+      const endereco = document.getElementById('enderecoCliente').value || "Não informado";
+      const pagamento = document.getElementById('pagamentoCliente').value || "Não informado";
+
+      const message = encodeURIComponent(
+        "Olá! Gostaria de fazer um pedido:\n" +
+        cart.map(c => `- ${c.item} (R$${c.price.toFixed(2)})`).join("\n") +
+        `\nTotal: R$${total.toFixed(2)}` +
+        `\n\nNome: ${nome}` +
+        `\nEndereço: ${endereco}` +
+        `\nForma de pagamento: ${pagamento}`
+      );
       checkoutLink.href = `https://wa.me/5582994330734?text=${message}`;
     }
   </script>
