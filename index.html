@@ -41,7 +41,14 @@
     <p>Sabor irresistível, entrega rápida e preço que cabe no bolso.</p>
   </section>
 
-  <section id="menu" class="menu-section">
+  
+    <section id="menu" class="menu-section">
+      <div style="text-align:center;">
+        <img src="https://cdn.pixabay.com/photo/2021/10/07/00/08/snack-6687466_1280.jpg" alt="Coxinha" width="100" style="margin:10px; border-radius:10px;">
+        <img src="https://cdn.pixabay.com/photo/2020/05/04/13/17/pastel-5127941_1280.jpg" alt="Pastel" width="100" style="margin:10px; border-radius:10px;">
+        <img src="https://cdn.pixabay.com/photo/2022/01/28/15/39/sausage-roll-6974683_1280.jpg" alt="Enroladinho" width="100" style="margin:10px; border-radius:10px;">
+      </div>
+    
     <div class="menu-category">
       <h2>Coxinha – R$5,00</h2>
       <div class="item">Charque <button onclick="addToCart('Coxinha de Charque', 5)">Adicionar</button></div>
@@ -77,7 +84,8 @@
         </select>
       </label>
     </div>
-    <a class="checkout-button" id="checkout-link" href="#" target="_blank">Finalizar pedido via WhatsApp</a>
+    <p style="text-align:center; font-weight: bold; color:#cc3300;">🕒 Atendimento das 16h às 22h</p>
+<a class="checkout-button" href="#" target="_blank" onclick="enviarPedido()">Finalizar pedido via WhatsApp</a>
   </section>
 
   <footer>
@@ -85,7 +93,29 @@
   </footer>
 
   <script>
+    
     let cart = [];
+    function enviarPedido() {
+      const cartList = document.getElementById('cart-items');
+      const totalSpan = document.getElementById('total');
+
+      const nome = document.getElementById('nomeCliente').value || "Não informado";
+      const endereco = document.getElementById('enderecoCliente').value || "Não informado";
+      const pagamento = document.getElementById('pagamentoCliente').value || "Não informado";
+
+      const total = cart.reduce((acc, item) => acc + item.price, 0);
+      const message = encodeURIComponent(
+        "Olá! Gostaria de fazer um pedido:\n" +
+        cart.map(c => `- ${c.item} (R$${c.price.toFixed(2)})`).join("\n") +
+        `\nTotal: R$${total.toFixed(2)}` +
+        `\n\nNome: ${nome}` +
+        `\nEndereço: ${endereco}` +
+        `\nForma de pagamento: ${pagamento}`
+      );
+      const url = `https://wa.me/5582994330734?text=${message}`;
+      window.open(url, '_blank');
+    }
+    
     function addToCart(item, price) {
       cart.push({ item, price });
       updateCart();
