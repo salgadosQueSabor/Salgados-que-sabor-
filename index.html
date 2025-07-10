@@ -1,38 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Salgados Que Sabor</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; background: #fff8e7; color: #333; }
-    header { background: #ff4d00; padding: 20px; text-align: center; color: white; font-size: 2.5em; font-weight: bold; }
-    nav { text-align: center; padding: 10px; background: #ffd699; }
-    nav a { margin: 0 15px; text-decoration: none; color: #cc3300; font-weight: bold; font-size: 1.1em; }
-    .hero { text-align: center; padding: 50px 20px; background: linear-gradient(135deg, #fff0d9, #ffe0cc); }
-    .hero h1 { font-size: 2.5em; color: #cc3300; }
-    .hero p { font-size: 1.2em; color: #663300; }
-    .menu-section { padding: 30px; }
-    .menu-category { margin-bottom: 30px; }
-    .menu-category h2 { color: #ff4d00; font-size: 1.8em; border-bottom: 2px solid #ffcc99; }
-    .item { margin: 8px 0; font-size: 1.2em; }
-    .item button { margin-left: 10px; background: #ff4d00; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; }
-    .order-button, .checkout-button {
-      display: block; width: 250px; margin: 30px auto; background: #ff4d00; color: white; text-align: center;
-      padding: 15px; border-radius: 10px; text-decoration: none; font-size: 1.3em; box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-      transition: 0.3s;
-    }
-    .order-button:hover, .checkout-button:hover { background: #e03e00; }
-    #cart { background: #fff0d9; padding: 20px; margin: 30px; border: 2px dashed #ff4d00; }
-    input, select { font-size: 1em; padding: 8px; width: 100%; margin-top: 5px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc; }
-    footer { background: #ff4d00; color: white; text-align: center; padding: 20px; font-size: 0.9em; }
+    body { font-family: Arial,sans-serif; margin:0; background:#fff8e7; color:#333; }
+    header { background:#ff4d00; padding:20px; text-align:center; color:white; font-size:2.5em; font-weight:bold; }
+    nav { text-align:center; padding:10px; background:#ffd699; }
+    nav a { margin:0 15px; text-decoration:none; color:#cc3300; font-weight:bold; font-size:1.1em; }
+    .hero { text-align:center; padding:50px 20px; background:linear-gradient(135deg,#fff0d9,#ffe0cc); }
+    .hero h1 { font-size:2.5em; color:#cc3300; }
+    .hero p { font-size:1.2em; color:#663300; }
+    .menu-section { padding:30px; }
+    .menu-category { margin-bottom:30px; }
+    .menu-category h2 { color:#ff4d00; font-size:1.8em; border-bottom:2px solid #ffcc99; }
+    .item { margin:8px 0; font-size:1.2em; }
+    .item button { margin-left:10px; background:#ff4d00; color:white; border:none; padding:5px 10px; border-radius:5px; cursor:pointer; }
+    #cart { background:#fff0d9; padding:20px; margin:30px; border:2px dashed #ff4d00; }
+    input, select { font-size:1em; padding:8px; width:100%; margin-top:5px; margin-bottom:10px; border-radius:5px; border:1px solid #ccc; }
+    footer { background:#ff4d00; color:white; text-align:center; padding:20px; font-size:0.9em; }
   </style>
 </head>
 <body>
   <header>SALGADOS QUE SABOR</header>
   <nav>
     <a href="#menu">Cardápio</a>
-    <a href="#sobre">Sobre</a>
     <a href="#contato">Contato</a>
   </nav>
 
@@ -41,112 +34,74 @@
     <p>Sabor irresistível, entrega rápida e preço que cabe no bolso.</p>
   </section>
 
-  
-    <section id="menu" class="menu-section">
-      <div style="text-align:center;">
-        <img src="https://cdn.pixabay.com/photo/2021/10/07/00/08/snack-6687466_1280.jpg" alt="Coxinha" width="100" style="margin:10px; border-radius:10px;">
-        <img src="https://cdn.pixabay.com/photo/2020/05/04/13/17/pastel-5127941_1280.jpg" alt="Pastel" width="100" style="margin:10px; border-radius:10px;">
-        <img src="https://cdn.pixabay.com/photo/2022/01/28/15/39/sausage-roll-6974683_1280.jpg" alt="Enroladinho" width="100" style="margin:10px; border-radius:10px;">
-      </div>
-    
+  <section id="menu" class="menu-section">
     <div class="menu-category">
       <h2>Coxinha – R$5,00</h2>
-      <div class="item">Charque <button onclick="addToCart('Coxinha de Charque', 5)">Adicionar</button></div>
-      <div class="item">Frango com queijo <button onclick="addToCart('Coxinha Frango com Queijo', 5)">Adicionar</button></div>
-      <div class="item">Frango com catupiry <button onclick="addToCart('Coxinha Frango com Catupiry', 5)">Adicionar</button></div>
+      <div class="item">Charque <button onclick="addToCart('Coxinha de Charque',5)">Adicionar</button></div>
+      <div class="item">Frango com queijo <button onclick="addToCart('Coxinha Frango com Queijo',5)">Adicionar</button></div>
+      <div class="item">Frango com catupiry <button onclick="addToCart('Coxinha Frango com Catupiry',5)">Adicionar</button></div>
     </div>
     <div class="menu-category">
       <h2>Pastel – R$6,00</h2>
-      <div class="item">Misto <button onclick="addToCart('Pastel Misto', 6)">Adicionar</button></div>
-      <div class="item">Carne <button onclick="addToCart('Pastel de Carne', 6)">Adicionar</button></div>
-      <div class="item">Frango com requeijão <button onclick="addToCart('Pastel Frango com Requeijão', 6)">Adicionar</button></div>
-      <div class="item">Queijo <button onclick="addToCart('Pastel de Queijo', 6)">Adicionar</button></div>
+      <div class="item">Misto <button onclick="addToCart('Pastel Misto',6)">Adicionar</button></div>
+      <div class="item">Carne <button onclick="addToCart('Pastel de Carne',6)">Adicionar</button></div>
+      <div class="item">Frango com requeijão <button onclick="addToCart('Pastel Frango com Requeijão',6)">Adicionar</button></div>
+      <div class="item">Queijo <button onclick="addToCart('Pastel de Queijo',6)">Adicionar</button></div>
     </div>
     <div class="menu-category">
       <h2>Enroladinho – R$5,00</h2>
-      <div class="item">Salsicha <button onclick="addToCart('Enroladinho de Salsicha', 5)">Adicionar</button></div>
-      <div class="item">Presunto e queijo <button onclick="addToCart('Enroladinho Presunto e Queijo', 5)">Adicionar</button></div>
+      <div class="item">Salsicha <button onclick="addToCart('Enroladinho de Salsicha',5)">Adicionar</button></div>
+      <div class="item">Presunto e queijo <button onclick="addToCart('Enroladinho Presunto e Queijo',5)">Adicionar</button></div>
     </div>
   </section>
 
-  <section id="cart" class="menu-section">
+  <section id="cart">
     <h2>🛒 Seu Pedido</h2>
     <ul id="cart-items"></ul>
     <p>Total: R$ <span id="total">0.00</span></p>
     <div>
-      <label>Nome:<input type="text" id="nomeCliente" /></label>
-      <label>Endereço:<input type="text" id="enderecoCliente" /></label>
-      <label>Forma de pagamento:
+      <label>Nome:<input type="text" id="nomeCliente"></label>
+      <label>Endereço:<input type="text" id="enderecoCliente"></label>
+      <label>Pagamento:
         <select id="pagamentoCliente">
-          <option value="Pix">Pix</option>
-          <option value="Dinheiro">Dinheiro</option>
-          <option value="Cartão">Cartão</option>
+          <option>Pix</option><option>Dinheiro</option><option>Cartão</option>
         </select>
       </label>
     </div>
-    <p style="text-align:center; font-weight: bold; color:#cc3300;">🕒 Atendimento das 16h às 22h</p>
-<a class="checkout-button" href="#" target="_blank" onclick="enviarPedido()">Finalizar pedido via WhatsApp</a>
+    <p style="text-align:center; color:#cc3300; font-weight:bold;">🕒 Atendimento das 16h às 22h</p>
+    <a class="checkout-button" href="#" onclick="enviarPedido()">Finalizar pedido via WhatsApp</a>
   </section>
 
-  <footer>
-    &copy; 2025 Salgados Que Sabor. Todos os direitos reservados.
-  </footer>
+  <footer>&copy; 2025 Salgados Que Sabor. Todos os direitos reservados.</footer>
 
   <script>
-    
     let cart = [];
-    function enviarPedido() {
-      const cartList = document.getElementById('cart-items');
-      const totalSpan = document.getElementById('total');
-
-      const nome = document.getElementById('nomeCliente').value || "Não informado";
-      const endereco = document.getElementById('enderecoCliente').value || "Não informado";
-      const pagamento = document.getElementById('pagamentoCliente').value || "Não informado";
-
-      const total = cart.reduce((acc, item) => acc + item.price, 0);
-      const message = encodeURIComponent(
-        "Olá! Gostaria de fazer um pedido:\n" +
-        cart.map(c => `- ${c.item} (R$${c.price.toFixed(2)})`).join("\n") +
-        `\nTotal: R$${total.toFixed(2)}` +
-        `\n\nNome: ${nome}` +
-        `\nEndereço: ${endereco}` +
-        `\nForma de pagamento: ${pagamento}`
-      );
-      const url = `https://wa.me/5582994330734?text=${message}`;
-      window.open(url, '_blank');
+    function addToCart(item,price){
+      cart.push({item,price}); updateCart();
     }
-    
-    function addToCart(item, price) {
-      cart.push({ item, price });
-      updateCart();
-    }
-    function updateCart() {
-      const cartList = document.getElementById('cart-items');
-      const totalSpan = document.getElementById('total');
-      const checkoutLink = document.getElementById('checkout-link');
-      cartList.innerHTML = '';
-      let total = 0;
-      cart.forEach(({ item, price }) => {
-        const li = document.createElement('li');
-        li.textContent = `${item} - R$${price.toFixed(2)}`;
-        cartList.appendChild(li);
-        total += price;
+    function updateCart(){
+      const list=document.getElementById('cart-items'),
+            tot=document.getElementById('total');
+      list.innerHTML=''; let sum=0;
+      cart.forEach(c => { sum+=c.price; let li=document.createElement('li');
+        li.textContent=`${c.item} - R$${c.price.toFixed(2)}`; list.appendChild(li);
       });
-      totalSpan.textContent = total.toFixed(2);
-
-      const nome = document.getElementById('nomeCliente').value || "Não informado";
-      const endereco = document.getElementById('enderecoCliente').value || "Não informado";
-      const pagamento = document.getElementById('pagamentoCliente').value || "Não informado";
-
-      const message = encodeURIComponent(
-        "Olá! Gostaria de fazer um pedido:\n" +
-        cart.map(c => `- ${c.item} (R$${c.price.toFixed(2)})`).join("\n") +
-        `\nTotal: R$${total.toFixed(2)}` +
-        `\n\nNome: ${nome}` +
-        `\nEndereço: ${endereco}` +
-        `\nForma de pagamento: ${pagamento}`
+      tot.textContent=sum.toFixed(2);
+    }
+    function enviarPedido(){
+      const nome=document.getElementById('nomeCliente').value||'Não informado',
+            end=document.getElementById('enderecoCliente').value||'Não informado',
+            pag=document.getElementById('pagamentoCliente').value||'Não informado';
+      const total=cart.reduce((a,b)=>a+b.price,0).toFixed(2);
+      const msg=encodeURIComponent(
+        "Olá! Gostaria de fazer um pedido:\n"+
+        cart.map(c=>`- ${c.item} (R$${c.price.toFixed(2)})`).join("\n")+
+        `\nTotal: R$${total}`+
+        `\nNome: ${nome}`+
+        `\nEndereço: ${end}`+
+        `\nForma de pagamento: ${pag}`
       );
-      checkoutLink.href = `https://wa.me/5582994330734?text=${message}`;
+      window.open(`https://wa.me/5582994330734?text=${msg}`, '_blank');
     }
   </script>
 </body>
